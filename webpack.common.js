@@ -1,7 +1,8 @@
 
 const path = require('path');
-const webpack = require('webpack');
+// const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -11,7 +12,6 @@ module.exports = {
     filename: '[name].bundle.js', // 输出文件名，[name]表示入口文件js名
     path: path.join(__dirname, 'dist'), // 输出文件路径
   },
-  mode: 'development',
   module: {
     rules: [
       {
@@ -51,17 +51,11 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(), // 调用webpack的热更新插件
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src', 'index.ejs'), // 模板
       filename: 'index.html',
       hash: true, // 防止缓存
     }),
   ],
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 9000,
-    hot: true,
-  },
 }

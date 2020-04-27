@@ -1,7 +1,8 @@
 import React from 'react';
-import { Router, Route } from 'dva/router';
+import { Router, Route, routerRedux } from 'dva/router';
 import IndexPage from './routes/IndexPage';
 
+const { ConnectedRouter } = routerRedux;
 function RouterConfig({ history }) {
   return (
     <Router history={history}>

@@ -2,8 +2,8 @@ module.exports = {
   presets: ['@babel/preset-env', '@babel/preset-react'],
   plugins: [
     ['import', { libraryName: 'antd', libraryDirectory: 'es', style: true }],
-    // ['@babel/plugin-proposal-decorators', { legacy: true }],
-    // '@babel/plugin-proposal-class-properties',
+    ['@babel/plugin-proposal-decorators', { legacy: true }],
+    '@babel/plugin-proposal-class-properties',
     [
       '@babel/plugin-transform-runtime',
       {
