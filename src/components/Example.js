@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { connect } from 'dva';
+import { Checkbox, Button, Icon } from 'antd';
 import './Example.css';
 // import { connect } from 'dva';
 
@@ -15,14 +17,38 @@ export default class Example extends Component {
     dispatch({
       type: 'example/fetch',
     });
-  };
+  }
+  createClickHandler() {
+    const { dispatch } = this.props;
+    const param = { name: 'aaa', status: '0' };
+    dispatch({
+      type: 'example/create',
+      payload: param,
+    });
+  }
   render() {
-    const { example } = this.props;
-    console.log(example)
+    const { list } = this.props;
+    console.log(list);
     return (
-      <div style={{ color: '#f00' }}>
-        Example
-        <p className="bg-blue">红色背景</p>
+      <div >
+        <Button onClick={() => this.createClickHandler()}>新增</Button>
+        <ul style={{ listStyle: 'none' }}>
+          {
+            list.map((item, index) => {
+              return (
+                <li key={index}>
+                  <span style={{ marginRight: 10 }}>
+                    <Checkbox defaultChecked={false}>{item.name}</Checkbox>
+                  </span>
+                  <span>
+                    <Icon type="minus-circle" />
+                  </span>
+                </li>
+              );
+            })
+          }
+        </ul>
+
       </div>
     );
   }

@@ -38,6 +38,14 @@ module.exports = {
         ],
       },
       {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'less-loader',
+        ],
+      },
+      {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
           {
@@ -58,4 +66,4 @@ module.exports = {
       hash: true, // 防止缓存
     }),
   ],
-}
+};

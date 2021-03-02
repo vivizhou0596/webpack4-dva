@@ -2,7 +2,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const Common = require('./webpack.common')
+const Common = require('./webpack.common');
 
 module.exports = merge(Common, {
   mode: 'development',
@@ -17,13 +17,17 @@ module.exports = merge(Common, {
     hot: true,
     proxy: {
       '/api': {
-        target: 'http://yapi.cbpmgt.com/mock/92',
+        // target: 'http://yapi.cbpmgt.com/mock/92',
+        target: 'http://mock.fe.sensorsdata.cn',
         changeOrigin: true,
         headers: {
-          Host: 'yapi.cbpmgt.com',
+          Host: 'mock.fe.sensorsdata.cn',
           'X-Requested-With': 'XMLHttpRequest',
+        },
+        pathRewrite: {
+          '^/api': '/',
         },
       },
     },
   },
-})
+});

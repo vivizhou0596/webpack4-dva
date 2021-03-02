@@ -5,8 +5,11 @@
 刚好最近在学习webpack4，所以暂时只处理了使用webpack配置和服务启动。后续再进一步优化，以及页面处理。
 
 第二次commit,做了一下调整
-1、区分开发环境和生产环境，不同环境的构建配置，webpack.dev.js应用开发环境，webpack.prod.js应用于开发环境
-2、配置服务代理使用yapi管理平台管理接口数据http://yapi.cbpmgt.com/mock/92
-3、开启dva数据管理
+
+ 1、区分开发环境和生产环境，不同环境的构建配置，webpack.dev.js应用开发环境，webpack.prod.js应用于开发环境
+ 
+ 2、配置服务代理使用yapi管理平台管理接口数据http://yapi.cbpmgt.com/mock/92
+
+ 3、开启dva数据管理
 
 下一步，实现通用的菜单和路由配置
