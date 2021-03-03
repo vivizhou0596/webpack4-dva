@@ -17,7 +17,6 @@ module.exports = merge(Common, {
     hot: true,
     proxy: {
       '/api': {
-        // target: 'http://yapi.cbpmgt.com/mock/92',
         target: 'http://mock.fe.sensorsdata.cn',
         changeOrigin: true,
         headers: {

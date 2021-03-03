@@ -19,10 +19,9 @@ export default {
       });
     },
     *create({ payload, callback }, { call }) {
-      // const { data: { obj } } = yield call(create, payload);
       return yield call(create, payload);
+      // 以下代码是前端模拟服务器数据更新，可在页面看出实时更新效果
       // if (obj.code === 'success') {
-      //   // 模拟服务器数据更新
       //   const tempList = yield select(state => state.example.list);
       //   let list = [];
       //   list = list.concat(tempList);

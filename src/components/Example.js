@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'dva';
 import { Checkbox, Button, Icon, Input, message } from 'antd';
 import './Example.css';
-// import { connect } from 'dva';
 
 @connect(({ example }) => {
   return {
