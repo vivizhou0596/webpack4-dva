@@ -34,16 +34,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8f60aaa6-4a80-45f5-8a7b-acf285015abd" name="Default Changelist" comment="feat:todolist 获取列表">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Example.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Example.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/example.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/example.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/IndexPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/IndexPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/IndexPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/IndexPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/example.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/example.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.common.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.dev.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,29 +53,6 @@
         <option value="CSS File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>MiniCssExtractPlugin</find>
-      <find>plugin-proposal-class-properties</find>
-      <find>plugin-proposal-decorators</find>
-      <find>plugin-proposal-do-expressions</find>
-      <find>plugin-proposal-export-default-from</find>
-      <find>plugin-proposal-export-namespace-from</find>
-      <find>plugin-proposal-function-bind</find>
-      <find>plugin-proposal-function-sent</find>
-      <find>plugin-proposal-json-strings</find>
-      <find>plugin-proposal-logical-assignment-operators</find>
-      <find>plugin-proposal-nullish-coalescing-operator</find>
-      <find>plugin-proposal-numeric-separator</find>
-      <find>plugin-proposal-optional-chaining</find>
-      <find>plugin-proposal-pipeline-operator</find>
-      <find>plugin-proposal-throw-expressions</find>
-      <find>plugin-syntax-dynamic-import</find>
-      <find>plugin-syntax-import-meta</find>
-      <find>plugin-transform-runtime</find>
-      <find>plugin-module-resolver</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -134,18 +108,17 @@
       <workItem from="1614397188083" duration="6452000" />
       <workItem from="1614417057910" duration="1767000" />
       <workItem from="1614513925382" duration="370000" />
-      <workItem from="1614514306641" duration="8092000" />
+      <workItem from="1614514306641" duration="14838000" />
     </task>
+    <task id="LOCAL-00001" summary="feat:todolist 获取列表">
+      <created>1614689353069</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614689353069</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
@@ -179,17 +152,21 @@
     <option name="LAST_COMMIT_MESSAGE" value="feat:todolist 获取列表" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="401" y="195" key="#ESLint" timestamp="1614689121903">
+    <state x="401" y="195" key="#ESLint" timestamp="1614753333246">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="401" y="195" key="#ESLint/0.0.1440.900@0.0.1440.900" timestamp="1614689121903" />
+    <state x="401" y="195" key="#ESLint/0.0.1440.900@0.0.1440.900" timestamp="1614753333246" />
     <state x="221" y="89" key="SettingsEditor" timestamp="1614407917137">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1614407917137" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1614689029605">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1614689363984">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1614689029605" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1614689363984" />
+    <state x="418" y="205" width="604" height="490" key="find.popup" timestamp="1614755566242">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="418" y="205" width="604" height="490" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1614755566242" />
   </component>
 </project>

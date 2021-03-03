@@ -7,7 +7,7 @@ export function query(params) {
   // return request('/api/users', {
   return request(`/api${$ex}/todoList`, {
     method: 'GET',
-    body: params,
+    body: JSON.stringify(params),
   });
 }
 
@@ -15,7 +15,7 @@ export function query(params) {
 export function create(params) {
   return request(`/api${$ex}/create`, {
     method: 'POST',
-    body: params,
+    body: JSON.stringify(params),
   });
 }
 
@@ -23,13 +23,13 @@ export function create(params) {
 export function edit(params) {
   return request(`/api${$ex}/edit`, {
     method: 'POST',
-    body: params,
+    body: JSON.stringify(params),
   });
 }
 // 删除todo
 export function deleteTodo(params) {
   return request(`/api${$ex}/delete`, {
     method: 'POST',
-    body: params,
+    body: JSON.stringify(params),
   });
 }

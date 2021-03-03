@@ -8,7 +8,7 @@ function IndexPage() {
     <div className="normal">
       <h1 className="title" >Yay! Welcome to dva!</h1>
       {/* <div className="welcome" /> */}
-      <p>测试样式</p>
+      <p>基于dva实现 todoList</p>
       <Example />
     </div>
   );
