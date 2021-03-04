@@ -1,7 +1,6 @@
 
 .normal {
   font-family: Georgia, sans-serif;
-  margin-top: 3em;
   text-align: center;
 }
 
@@ -28,3 +27,18 @@
   background: #f7f7f7;
 }
 
+.header{
+  height: 64px;
+  box-shadow: 0 2px 8px #f0f1f2;
+  background-color: #1890ff;
+  color: #fff;
+  font-size: 24px;
+}
+.header-content{
+  width: 400px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

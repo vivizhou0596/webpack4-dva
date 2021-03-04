@@ -18,30 +18,57 @@ export default {
         payload: { list: response.data.data },
       });
     },
-    *create({ payload, callback }, { call }) {
-      return yield call(create, payload);
+    *create({ payload, callback }, { call, put, select }) {
+      const { data: { obj } } = yield call(create, payload);
       // 以下代码是前端模拟服务器数据更新，可在页面看出实时更新效果
-      // if (obj.code === 'success') {
-      //   const tempList = yield select(state => state.example.list);
-      //   let list = [];
-      //   list = list.concat(tempList);
-      //   const tempObj = {};
-      //   tempObj.name = payload.name;
-      //   tempObj.id = list.length;
-      //   tempObj.status = '0';
-      //   list.push(tempObj);
-      //   yield put({
-      //     type: 'save',
-      //     payload: { list },
-      //   });
-      //   return obj;
-      // }
+      if (obj.code === 'success') {
+        const tempList = yield select(state => state.example.list);
+        let list = [];
+        list = list.concat(tempList);
+        const tempObj = {};
+        tempObj.name = payload.name;
+        tempObj.id = list.length;
+        tempObj.status = false;
+        list.push(tempObj);
+        yield put({
+          type: 'save',
+          payload: { list },
+        });
+        return obj;
+      }
     },
-    *deleteTodo({ payload, callback }, { call }) {
-      return yield call(deleteTodo, payload);
+    *deleteTodo({ payload, callback }, { call, put, select }) {
+      const { data: { obj } } = yield call(deleteTodo, payload);
+      if (obj.code === 'success') {
+        const tempList = yield select(state => state.example.list);
+        const list = tempList.filter(item => item.id !== payload.id);
+        yield put({
+          type: 'save',
+          payload: { list },
+        });
+        return obj;
+      }
     },
-    *update({ payload, callback }, { call }) {
-      return yield call(edit, payload);
+    *update({ payload, callback }, { call, put, select }) {
+      const { data: { obj } } = yield call(edit, payload);
+      if (obj.code === 'success') {
+        const tempList = yield select(state => state.example.list);
+        const list = tempList.map((item) => {
+          if (item.id === payload.id) {
+            return {
+              ...item,
+              status: payload.status,
+            };
+          } else {
+            return item;
+          }
+        });
+        yield put({
+          type: 'save',
+          payload: { list },
+        });
+        return obj;
+      }
     },
     *reload({ payload }, { put }) {
       yield put({

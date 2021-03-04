@@ -1,3 +1,13 @@
 .bg-blue{
   background-color: blue;
 }
+.todo-item{
+  height: 48px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  border-radius: 5px;
+  margin-bottom: 4px;
+}

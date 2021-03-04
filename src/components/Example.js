@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { connect } from 'dva';
-import { Checkbox, Button, Icon, Input, message } from 'antd';
+import { Checkbox, Icon, message } from 'antd';
 import './Example.css';
 
 @connect(({ example }) => {
@@ -20,25 +20,7 @@ export default class Example extends Component {
       type: 'example/fetch',
     });
   }
-  createClickHandler() {
-    const { dispatch } = this.props;
-    const { name } = this.state;
-    dispatch({
-      type: 'example/create',
-      payload: {
-        name,
-      },
-    }).then((res) => {
-      const { data: { obj } } = res;
-      if (obj.code === 'success') {
-        message.success('增加成功');
-        this.setState({ name: '' });
-        dispatch({
-          type: 'example/reload',
-        });
-      }
-    });
-  }
+
   deleteClickHandler(id) {
     const { dispatch } = this.props;
     dispatch({
@@ -46,13 +28,9 @@ export default class Example extends Component {
       payload: {
         id,
       },
-    }).then((res) => {
-      const { data: { obj } } = res;
+    }).then((obj) => {
       if (obj.code === 'success') {
         message.success('删除成功');
-        dispatch({
-          type: 'example/reload',
-        });
       }
     });
   }
@@ -64,48 +42,26 @@ export default class Example extends Component {
         id,
         status,
       },
-    }).then((res) => {
-      const { data: { obj } } = res;
+    }).then((obj) => {
       if (obj.code === 'success') {
         message.success('修改成功');
-        dispatch({
-          type: 'example/reload',
-        });
       }
     });
   }
   render() {
     const { list } = this.props;
-    const { name } = this.state;
     return (
-      <div style={{ width: 300, margin: '0px auto' }}>
-        <div style={{ display: 'flex' }}>
-          <span >
-            <Input
-              placeholder="请输入名称"
-              value={name}
-              onChange={(e) => {
-                this.setState({ name: e.target.value });
-              }}
-            />
-          </span>
-          <Button
-            type="primary"
-            onClick={() => this.createClickHandler()}
-          >
-            新增
-          </Button>
-        </div>
+      <div style={{ width: 400, margin: '0px auto' }}>
         <ul style={{ listStyle: 'none', padding: '0px', textAlign: 'left', marginTop: 10 }}>
           {
             list.map((item, index) => {
               return (
-                <li key={index}>
-                  <span style={{ marginRight: 10, width: '200px' }}>
+                <li key={index} className="todo-item">
+                  <span style={{ marginRight: 10, width: '360px' }}>
                     <Checkbox
                       defaultChecked={false}
-                      checked={item.status === '1'}
-                      onChange={e => this.toggleStatus(item.id, e.target.value)}
+                      checked={item.status}
+                      onChange={e => this.toggleStatus(item.id, e.target.checked)}
                     >
                       {item.name}
                     </Checkbox>

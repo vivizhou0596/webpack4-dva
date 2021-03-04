@@ -12,5 +12,7 @@
 
  3、开启dva数据管理，实现一个todolist
  
+ 4、启动运行npm run start:dev
+ 
 
 
