@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { connect } from 'dva';
 import { Checkbox, Icon, message } from 'antd';
+import EditTodo from './EditTodo';
 import './Example.css';
 
 @connect(({ example }) => {
@@ -40,7 +41,10 @@ export default class Example extends Component {
       type: 'example/update',
       payload: {
         id,
-        status,
+        props: {
+          key: 'status',
+          value: status,
+        },
       },
     }).then((obj) => {
       if (obj.code === 'success') {
@@ -49,7 +53,10 @@ export default class Example extends Component {
     });
   }
   render() {
-    const { list } = this.props;
+    // const { list } = this.props;
+    // eslint-disable-next-line no-undef
+    const localList = sessionStorage.getItem('todoList');
+    const list = localList ? JSON.parse(localList) : this.props.list;
     return (
       <div style={{ width: 400, margin: '0px auto' }}>
         <ul style={{ listStyle: 'none', padding: '0px', textAlign: 'left', marginTop: 10 }}>
@@ -62,9 +69,10 @@ export default class Example extends Component {
                       defaultChecked={false}
                       checked={item.status}
                       onChange={e => this.toggleStatus(item.id, e.target.checked)}
-                    >
-                      {item.name}
-                    </Checkbox>
+                    />
+                    <EditTodo
+                      item={item}
+                    />
                   </span>
                   <span onClick={() => this.deleteClickHandler(item.id)}>
                     <Icon type="minus-circle" />
